@@ -1,9 +1,9 @@
 
 # Nginx with Certbot
 
-## Use
+### Using
 
-### Default
+#### Default
 add to your .bashrc for set variable local ip
 ```shell
 export HostIP=$(ifconfig | sed -En 's/127.0.0.1//;s/.*inet (addr:)?(([0-9]*\.){3}[0-9]*).*/\2/p' | head -n 1)
@@ -14,21 +14,21 @@ And run docker-compose.yml
 docker-compose up -d
 ```
 
-### For simple ssl
+#### For simple ssl
 
 ```shell
 docker exec -it 2af9fc39f387 certbot --nginx -d plataforma.xpag.com.br
 ```
 _Change 2af9fc39f387 for your container id_
 
-### For wildcard
+#### For wildcard
 
 ```shell
 docker exec -it 2af9fc39f387 certbot --dns-cloudflare --dns-cloudflare-credentials /etc/secrets/cloudflare.ini certonly --dns-cloudflare-propagation-seconds 70 -d *.example.com -d example.com
 ```
 _Change 2af9fc39f387 for your container id_
 
-### Templates
+#### Templates
 
 default.conf
 
