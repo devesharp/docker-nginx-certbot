@@ -28,9 +28,9 @@ docker exec -it 2af9fc39f387 certbot --dns-cloudflare --dns-cloudflare-credentia
 ```
 _Change 2af9fc39f387 for your container id_
 
-#### Templates
+### Templates
 
-default.conf
+#### default.conf
 
 ```ini
 server {
@@ -57,7 +57,7 @@ server {
 }
 ```
 
-wildcard.conf
+#### wildcard.conf
 
 ```ini
 server {
