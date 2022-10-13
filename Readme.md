@@ -30,6 +30,27 @@ _Change 2af9fc39f387 for your container id_
 
 ### Templates
 
+### docker-compose.yml
+
+
+```yaml
+version: '3'
+
+services:
+    nginx:
+          image: devesharp/nginx-certbot:latest
+          volumes:
+            - ./conf.d:/etc/nginx/conf.d
+            - ./certs:/etc/nginx/certs
+            - ./letsencrypt:/etc/letsencrypt
+          extra_hosts:
+            host: $HostIP
+          restart: always
+          ports:
+            - 80:80
+            - 443:443
+```
+
 #### default.conf
 
 ```ini
