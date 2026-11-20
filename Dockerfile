@@ -5,3 +5,5 @@ RUN pip3 install pip --upgrade
 RUN pip3 install certbot-nginx
 RUN pip3 install certbot-dns-cloudflare
 RUN mkdir /etc/letsencrypt
+
+# Update
